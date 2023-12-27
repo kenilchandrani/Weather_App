@@ -6,15 +6,15 @@ import 'package:weather_app/services/WeatherService.dart';
 
 class weather_details extends StatelessWidget {
 
-
-   weather_details(Type weather, {super.key});
+  final String city;
+   weather_details({required this.city});
 
 WeatherService weather = WeatherService();
 
 Weather? data;
 
  Future<void> getData() async{
-      data = await weather.getWeather("surat");
+      data = await weather.getWeather(city);
  }
 
   @override

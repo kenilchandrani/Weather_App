@@ -66,17 +66,18 @@ class _input_screenState extends State<input_screen> {
 
             ElevatedButton(onPressed: ()
                 async {
-                  Weather data = await weatherService.getWeather(_textController.text);
+                  // Weather data = await weatherService.getWeather(_textController.text);
                   // String Uinput = _textController.text.toString();
-                    // print("city = $Uinput");
+                  //    print("city = $data");
 
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => weather_details(Weather)),
+                MaterialPageRoute(builder: (context) => weather_details(city:_textController.text )),
               );
             }, child: Text('Submit',style: TextStyle(color: Colors.black ),)
             ),
           ],
+
         ),
       ),
     );
