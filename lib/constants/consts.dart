@@ -1,1 +1,1 @@
-const Weather_api_key = "8d491df4ca56d3c9a99989349c50763c";
+const Weather_api_key = "cf8d72acf645e805ae39c3850d379612";

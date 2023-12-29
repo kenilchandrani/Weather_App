@@ -5,16 +5,27 @@ import 'package:weather_app/models/weather_model.dart';
 
 class WeatherService {
 
-
   Future<Weather>? getWeather(String? location) async {
 
     var endpoint =  Uri.parse(
-        "https://api.openweathermap.org/data/2.5/weather?q=$location&appid=8d491df4ca56d3c9a99989349c50763c&units=metric");
+        "https://api.openweathermap.org/data/2.5/weather?q=$location&appid=cf8d72acf645e805ae39c3850d379612&units=metric");
+
     var response = await http.get(endpoint);
+    // print("response is --$response");
     var body = jsonDecode(response.body);
-    // Weather weather = Weather.fromJson(body);
-    print(Weather.fromJson(body).cityName);
-    return Weather.fromJson(body);
+    if(response.statusCode == 200){
+      // print(Weather.fromJson(body).temp);
+      return Weather.fromJson(body);
+
+    }
+    else{
+
+      throw Exception('failed to load weather data');
+
+    }
+
+    // print(Weather.fromJson(body).cityName);
+
 
 
 
